@@ -1,428 +1,511 @@
 <!DOCTYPE html>
-
-<html class="dark" lang="en"><head>
+<html class="dark" lang="en">
+<head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&amp;family=Inter:wght@300;400;500;600&amp;family=Manrope:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,wght@0,400;0,700;1,400;1,700&family=Inter:wght@300;400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <script id="tailwind-config">
-      tailwind.config = {
-        darkMode: "class",
-        theme: {
-          extend: {
-            "colors": {
-                    "surface-bright": "#37393e",
-                    "inverse-on-surface": "#2f3035",
-                    "background": "#111317",
-                    "on-error": "#690005",
-                    "on-secondary-fixed-variant": "#36485b",
-                    "on-tertiary": "#3a2f19",
-                    "outline-variant": "#4e4639",
-                    "on-secondary": "#203243",
-                    "surface-container-high": "#282a2e",
-                    "surface-container-low": "#1a1c20",
-                    "primary-fixed-dim": "#e9c176",
-                    "on-tertiary-fixed": "#241a06",
-                    "surface-variant": "#333539",
-                    "tertiary": "#d7c4a5",
-                    "on-primary-fixed-variant": "#5d4201",
-                    "error": "#ffb4ab",
-                    "on-primary-container": "#4e3700",
-                    "surface-tint": "#e9c176",
-                    "inverse-primary": "#775a19",
-                    "on-background": "#e2e2e8",
-                    "surface-container-highest": "#333539",
-                    "outline": "#9a8f80",
-                    "on-secondary-container": "#a4b7cd",
-                    "on-tertiary-fixed-variant": "#52452d",
-                    "surface-container": "#1e2024",
-                    "secondary-container": "#36485b",
-                    "surface-dim": "#111317",
-                    "on-surface-variant": "#d1c5b4",
-                    "on-primary-fixed": "#261900",
-                    "secondary": "#b5c8df",
-                    "on-secondary-fixed": "#091d2e",
-                    "surface": "#111317",
-                    "on-primary": "#412d00",
-                    "surface-container-lowest": "#0c0e12",
-                    "error-container": "#93000a",
-                    "on-error-container": "#ffdad6",
-                    "secondary-fixed": "#d1e4fb",
-                    "inverse-surface": "#e2e2e8",
-                    "primary-container": "#c5a059",
-                    "primary-fixed": "#ffdea5",
-                    "secondary-fixed-dim": "#b5c8df",
-                    "tertiary-fixed": "#f4e0bf",
-                    "tertiary-container": "#b5a385",
-                    "tertiary-fixed-dim": "#d7c4a5",
-                    "primary": "#e9c176",
-                    "on-surface": "#e2e2e8",
-                    "on-tertiary-container": "#463922"
-            },
-            "borderRadius": {
-                    "DEFAULT": "0.125rem",
-                    "lg": "0.25rem",
-                    "xl": "0.5rem",
-                    "full": "0.75rem"
-            },
-            "fontFamily": {
-                    "headline": ["Newsreader", "serif"],
-                    "body": ["Inter", "sans-serif"],
-                    "label": ["Manrope", "sans-serif"]
-            }
-          },
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        colors: {
+          "surface-bright": "#37393e",
+          "inverse-on-surface": "#2f3035",
+          "background": "#111317",
+          "on-error": "#690005",
+          "on-secondary-fixed-variant": "#36485b",
+          "on-tertiary": "#3a2f19",
+          "outline-variant": "#4e4639",
+          "on-secondary": "#203243",
+          "surface-container-high": "#282a2e",
+          "surface-container-low": "#1a1c20",
+          "primary-fixed-dim": "#e9c176",
+          "on-tertiary-fixed": "#241a06",
+          "surface-variant": "#333539",
+          "tertiary": "#d7c4a5",
+          "on-primary-fixed-variant": "#5d4201",
+          "error": "#ffb4ab",
+          "on-primary-container": "#4e3700",
+          "surface-tint": "#e9c176",
+          "inverse-primary": "#775a19",
+          "on-background": "#e2e2e8",
+          "surface-container-highest": "#333539",
+          "outline": "#9a8f80",
+          "on-secondary-container": "#a4b7cd",
+          "on-tertiary-fixed-variant": "#52452d",
+          "surface-container": "#1e2024",
+          "secondary-container": "#36485b",
+          "surface-dim": "#111317",
+          "on-surface-variant": "#d1c5b4",
+          "on-primary-fixed": "#261900",
+          "secondary": "#b5c8df",
+          "on-secondary-fixed": "#091d2e",
+          "surface": "#111317",
+          "on-primary": "#412d00",
+          "surface-container-lowest": "#0c0e12",
+          "error-container": "#93000a",
+          "on-error-container": "#ffdad6",
+          "secondary-fixed": "#d1e4fb",
+          "inverse-surface": "#e2e2e8",
+          "primary-container": "#c5a059",
+          "primary-fixed": "#ffdea5",
+          "secondary-fixed-dim": "#b5c8df",
+          "tertiary-fixed": "#f4e0bf",
+          "tertiary-container": "#b5a385",
+          "tertiary-fixed-dim": "#d7c4a5",
+          "primary": "#e9c176",
+          "on-surface": "#e2e2e8",
+          "on-tertiary-container": "#463922"
         },
+        borderRadius: {
+          "DEFAULT": "0.125rem",
+          "lg": "0.25rem",
+          "xl": "0.5rem",
+          "full": "0.75rem"
+        },
+        fontFamily: {
+          "headline": ["Newsreader", "serif"],
+          "body": ["Inter", "sans-serif"],
+          "label": ["Manrope", "sans-serif"]
+        },
+        keyframes: {
+          marquee: {
+            '0%': { transform: 'translateX(0%)' },
+            '100%': { transform: 'translateX(-50%)' }
+          }
+        },
+        animation: {
+          marquee: 'marquee 24s linear infinite'
+        }
       }
-    </script>
+    }
+  }
+</script>
 <style>
-      body {
-        background-color: #111317;
-        color: #e2e2e8;
-        font-family: 'Inter', sans-serif;
-      }
-      .newsreader { font-family: 'Newsreader', serif; }
-      .manrope { font-family: 'Manrope', sans-serif; }
-      .material-symbols-outlined {
-        font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-      }
-      .glass-surface {
-        background: rgba(26, 28, 32, 0.6);
-        backdrop-filter: blur(20px);
-      }
-      .tonal-shift-via-opacity {
-        background-color: rgba(17, 19, 23, 0.8);
-      }
-    </style>
-<style>html { scroll-behavior: smooth; }</style></head>
+  body {
+    background-color: #111317;
+    color: #e2e2e8;
+    font-family: 'Inter', sans-serif;
+  }
+  .newsreader { font-family: 'Newsreader', serif; }
+  .manrope { font-family: 'Manrope', sans-serif; }
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+  }
+  html { scroll-behavior: smooth; }
+
+  /* Fixed nav offset so anchors aren't hidden under the navbar */
+  #methodology,
+  #mandates,
+  #testimonials,
+  #engage {
+    scroll-margin-top: 96px;
+  }
+
+  /* Ticker marquee */
+  .ticker-track {
+    display: flex;
+    width: max-content;
+    animation: marquee 24s linear infinite;
+  }
+  @keyframes marquee {
+    0%   { transform: translateX(0); }
+    100% { transform: translateX(-50%); }
+  }
+  .ticker-track:hover {
+    animation-play-state: paused;
+  }
+</style>
+</head>
 <body class="bg-background text-on-background">
+
 <!-- Ticker Section -->
 <div class="w-full bg-surface-container-lowest py-2 overflow-hidden whitespace-nowrap border-b border-outline-variant/10">
-<div class="flex gap-12 items-center animate-marquee">
-<span class="font-label text-[10px] tracking-widest uppercase text-outline">MARKET SENTIMENT: BULLISH</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-primary">S&amp;P 500 +1.2%</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-secondary">GOLD -0.4%</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-primary">PRIVATE EQUITY FLOW +2.4%</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-outline">MARKET SENTIMENT: BULLISH</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-primary">S&amp;P 500 +1.2%</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-secondary">GOLD -0.4%</span>
-<span class="font-label text-[10px] tracking-widest uppercase text-primary">PRIVATE EQUITY FLOW +2.4%</span>
+  <div class="ticker-track gap-12 items-center flex">
+    <!-- First set -->
+    <span class="font-label text-[10px] tracking-widest uppercase text-outline px-6">MARKET SENTIMENT: BULLISH</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-primary px-6">S&amp;P 500 +1.2%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-secondary px-6">GOLD -0.4%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-primary px-6">PRIVATE EQUITY FLOW +2.4%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-outline px-6">10Y TREASURY YIELD 4.31%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-secondary px-6">WTI CRUDE +0.8%</span>
+    <!-- Duplicate for seamless loop -->
+    <span class="font-label text-[10px] tracking-widest uppercase text-outline px-6">MARKET SENTIMENT: BULLISH</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-primary px-6">S&amp;P 500 +1.2%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-secondary px-6">GOLD -0.4%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-primary px-6">PRIVATE EQUITY FLOW +2.4%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-outline px-6">10Y TREASURY YIELD 4.31%</span>
+    <span class="font-label text-[10px] tracking-widest uppercase text-secondary px-6">WTI CRUDE +0.8%</span>
+  </div>
 </div>
-</div>
+
 <!-- TopNavBar -->
 <nav class="fixed top-0 w-full z-50 bg-[#111317]/80 backdrop-blur-xl shadow-[0_40px_0_0_rgba(255,255,255,0.02)]">
-<div class="flex justify-between items-center max-w-7xl mx-auto px-12 py-6">
-<div class="font-headline text-2xl font-bold tracking-tight text-[#C5A059]">Sovereign Ledger</div>
-<div class="hidden md:flex items-center space-x-10">
-<a class="font-headline italic text-lg capitalize text-[#C5A059] border-b border-[#C5A059] pb-1" href="#methodology">Strategy</a>
-<a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors" href="#mandates">Insights</a>
-<a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors" href="#testimonials">Portfolio</a>
-<a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors" href="#engage">Advisory</a>
-</div>
-<button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-label font-bold tracking-wide hover:shadow-[0_0_20px_rgba(233,193,118,0.2)] transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                Engage
-            </button>
-</div>
+  <div class="flex justify-between items-center max-w-7xl mx-auto px-12 py-6">
+    <div class="font-headline text-2xl font-bold tracking-tight text-[#C5A059] cursor-pointer" onclick="window.scrollTo({top:0,behavior:'smooth'})">Sovereign Ledger</div>
+    <div class="hidden md:flex items-center space-x-10">
+      <a class="font-headline italic text-lg capitalize text-[#C5A059] border-b border-[#C5A059] pb-1 cursor-pointer" onclick="document.getElementById('methodology').scrollIntoView({behavior:'smooth'})">Strategy</a>
+      <a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors cursor-pointer" onclick="document.getElementById('mandates').scrollIntoView({behavior:'smooth'})">Insights</a>
+      <a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors cursor-pointer" onclick="document.getElementById('testimonials').scrollIntoView({behavior:'smooth'})">Portfolio</a>
+      <a class="font-headline italic text-lg capitalize text-slate-400 hover:text-slate-100 transition-colors cursor-pointer" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">Advisory</a>
+    </div>
+    <button class="bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed px-6 py-2 rounded-lg font-label font-bold tracking-wide hover:shadow-[0_0_20px_rgba(233,193,118,0.2)] transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+      Engage
+    </button>
+  </div>
 </nav>
+
 <!-- Hero Section -->
 <section class="pt-40 pb-24 px-12 max-w-7xl mx-auto">
-<div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
-<!-- Left Side: Editorial Content -->
-<div class="lg:col-span-8">
-<p class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-6">MARCUS VELDE STRATEGIC PARTNERS</p>
-<h1 class="font-headline text-7xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-on-background mb-8">
-                    YOUR CAPITAL <br/>
-<span class="italic text-primary">WORKS.</span>
-</h1>
-<p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed mb-12">
-                    A multi-family office methodology applied to the private investor. No speculation. Only high-conviction, risk-adjusted wealth preservation and growth.
-                </p>
-<div class="flex gap-6">
-<button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label font-bold tracking-wider hover:opacity-90 transition-opacity" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                        VIEW METHODOLOGY
-                    </button>
-<button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-lg font-label font-bold tracking-wider hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                        LATEST REPORT
-                    </button>
-</div>
-</div>
-<!-- Right Side: Data Sidebar (The Ledger) -->
-<div class="lg:col-span-4 space-y-4">
-<div class="bg-surface-container-low p-8 rounded-xl border-t border-white/5">
-<div class="flex justify-between items-end mb-8">
-<div>
-<p class="font-label text-[10px] tracking-widest text-outline uppercase">AUM Verified</p>
-<p class="font-headline text-4xl text-primary">$4.2B</p>
-</div>
-<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
-</div>
-<div class="space-y-6">
-<div class="flex justify-between border-b border-outline-variant/10 pb-4">
-<span class="font-body text-sm text-on-surface-variant">Avg. Annual Yield</span>
-<span class="font-label font-bold text-primary">12.4%</span>
-</div>
-<div class="flex justify-between border-b border-outline-variant/10 pb-4">
-<span class="font-body text-sm text-on-surface-variant">Risk Volatility</span>
-<span class="font-label font-bold text-secondary">Low-Med</span>
-</div>
-<div class="flex justify-between">
-<span class="font-body text-sm text-on-surface-variant">Client Retention</span>
-<span class="font-label font-bold text-on-surface">98.2%</span>
-</div>
-</div>
-</div>
-<div class="relative group overflow-hidden rounded-xl h-48">
-<img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" data-alt="close-up of a high-end luxury watch on a desk next to a leather-bound financial ledger, moody cinematic lighting" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhpnJ08IzgzLEhkENV9xGSRUZSsjhKqP-hkP8lAZYAcnbUOImgh8gfjltfZd0LZlbFWXfmudw6JILxiyXGr9QBV4gXjY7DJMZswIcoqC585Fu2aUloRheAAUo8Q2gi0VhNbR512XoPFqlgrOd26sh5qUL_1PBQyw5uGZ9-Dm8CX9Z_J1rBLeThEPOawORWyjYvl-PqY93kAi6F2FRfC-azvOm0lBVOPaiMMLOQB4rjLCWixfXLlKTbFc_wCfcL8gjfX8nSE5EbOI0"/>
-<div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
-<div class="absolute bottom-6 left-6">
-<p class="font-headline italic text-white text-xl">The Gold Standard in Wealth</p>
-</div>
-</div>
-</div>
-</div>
+  <div class="grid grid-cols-1 lg:grid-cols-12 gap-16 items-start">
+    <!-- Left Side: Editorial Content -->
+    <div class="lg:col-span-8">
+      <p class="font-label text-xs tracking-[0.3em] uppercase text-primary mb-6">MARCUS VELDE STRATEGIC PARTNERS</p>
+      <h1 class="font-headline text-7xl md:text-8xl font-bold tracking-tighter leading-[0.9] text-on-background mb-8">
+        YOUR CAPITAL <br/>
+        <span class="italic text-primary">WORKS.</span>
+      </h1>
+      <p class="font-body text-xl text-on-surface-variant max-w-xl leading-relaxed mb-12">
+        A multi-family office methodology applied to the private investor. No speculation. Only high-conviction, risk-adjusted wealth preservation and growth.
+      </p>
+      <div class="flex gap-6">
+        <button class="bg-primary text-on-primary px-8 py-4 rounded-lg font-label font-bold tracking-wider hover:opacity-90 transition-opacity" onclick="document.getElementById('methodology').scrollIntoView({behavior:'smooth'})">
+          VIEW METHODOLOGY
+        </button>
+        <button class="border border-outline-variant/30 text-on-surface px-8 py-4 rounded-lg font-label font-bold tracking-wider hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+          LATEST REPORT
+        </button>
+      </div>
+    </div>
+    <!-- Right Side: Data Sidebar (The Ledger) -->
+    <div class="lg:col-span-4 space-y-4">
+      <div class="bg-surface-container-low p-8 rounded-xl border-t border-white/5">
+        <div class="flex justify-between items-end mb-8">
+          <div>
+            <p class="font-label text-[10px] tracking-widest text-outline uppercase">AUM Verified</p>
+            <p class="font-headline text-4xl text-primary">$4.2B</p>
+          </div>
+          <span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">verified_user</span>
+        </div>
+        <div class="space-y-6">
+          <div class="flex justify-between border-b border-outline-variant/10 pb-4">
+            <span class="font-body text-sm text-on-surface-variant">Avg. Annual Yield</span>
+            <span class="font-label font-bold text-primary">12.4%</span>
+          </div>
+          <div class="flex justify-between border-b border-outline-variant/10 pb-4">
+            <span class="font-body text-sm text-on-surface-variant">Risk Volatility</span>
+            <span class="font-label font-bold text-secondary">Low-Med</span>
+          </div>
+          <div class="flex justify-between">
+            <span class="font-body text-sm text-on-surface-variant">Client Retention</span>
+            <span class="font-label font-bold text-on-surface">98.2%</span>
+          </div>
+        </div>
+      </div>
+      <div class="relative group overflow-hidden rounded-xl h-48">
+        <img class="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBhpnJ08IzgzLEhkENV9xGSRUZSsjhKqP-hkP8lAZYAcnbUOImgh8gfjltfZd0LZlbFWXfmudw6JILxiyXGr9QBV4gXjY7DJMZswIcoqC585Fu2aUloRheAAUo8Q2gi0VhNbR512XoPFqlgrOd26sh5qUL_1PBQyw5uGZ9-Dm8CX9Z_J1rBLeThEPOawORWyjYvl-PqY93kAi6F2FRfC-azvOm0lBVOPaiMMLOQB4rjLCWixfXLlKTbFc_wCfcL8gjfX8nSE5EbOI0" alt="Luxury watch beside leather-bound financial ledger"/>
+        <div class="absolute inset-0 bg-gradient-to-t from-surface to-transparent opacity-80"></div>
+        <div class="absolute bottom-6 left-6">
+          <p class="font-headline italic text-white text-xl">The Gold Standard in Wealth</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- Results Strip -->
 <section class="bg-surface-container-lowest border-y border-outline-variant/10 py-12">
-<div class="max-w-7xl mx-auto px-12 flex flex-wrap justify-between items-center gap-8">
-<div class="text-center md:text-left">
-<p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">CUMULATIVE RETURN</p>
-<p class="font-headline text-3xl font-bold">+284%</p>
-</div>
-<div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
-<div class="text-center md:text-left">
-<p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">MAX DRAWDOWN</p>
-<p class="font-headline text-3xl font-bold text-error">4.2%</p>
-</div>
-<div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
-<div class="text-center md:text-left">
-<p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">ACTIVE MANDATES</p>
-<p class="font-headline text-3xl font-bold">142</p>
-</div>
-<div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
-<div class="text-center md:text-left">
-<p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">SHARPE RATIO</p>
-<p class="font-headline text-3xl font-bold text-secondary">3.1</p>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto px-12 flex flex-wrap justify-between items-center gap-8">
+    <div class="text-center md:text-left">
+      <p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">CUMULATIVE RETURN</p>
+      <p class="font-headline text-3xl font-bold">+284%</p>
+    </div>
+    <div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
+    <div class="text-center md:text-left">
+      <p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">MAX DRAWDOWN</p>
+      <p class="font-headline text-3xl font-bold text-error">4.2%</p>
+    </div>
+    <div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
+    <div class="text-center md:text-left">
+      <p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">ACTIVE MANDATES</p>
+      <p class="font-headline text-3xl font-bold">142</p>
+    </div>
+    <div class="w-px h-12 bg-outline-variant/20 hidden md:block"></div>
+    <div class="text-center md:text-left">
+      <p class="font-label text-[10px] tracking-widest uppercase text-outline mb-1">SHARPE RATIO</p>
+      <p class="font-headline text-3xl font-bold text-secondary">3.1</p>
+    </div>
+  </div>
 </section>
-<!-- Method Grid (Asymmetric Bento) -->
+
+<!-- Method Grid -->
 <section class="py-24 px-12 max-w-7xl mx-auto" id="methodology">
-<div class="mb-16">
-<p class="font-label text-xs tracking-widest uppercase text-primary mb-4">THE METHODOLOGY</p>
-<h2 class="font-headline text-5xl font-bold max-w-2xl">Precision Engineering for Sovereign Portfolios</h2>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-12 gap-4">
-<div class="md:col-span-8 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between min-h-[400px]">
-<div>
-<span class="material-symbols-outlined text-primary text-4xl mb-6">analytics</span>
-<h3 class="font-headline text-3xl font-bold mb-4">Alpha-Neutral Hedging</h3>
-<p class="font-body text-on-surface-variant max-w-lg leading-relaxed">
-                        We utilize sophisticated delta-neutral strategies to ensure your principal is protected during periods of heightened market volatility, while capturing upside via asymmetric derivative positioning.
-                    </p>
-</div>
-<div class="mt-8 flex items-center gap-4">
-<span class="font-label text-[10px] text-outline uppercase">CORE TENET 01</span>
-<div class="h-px flex-grow bg-outline-variant/20"></div>
-</div>
-</div>
-<div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-10 relative overflow-hidden group">
-<div class="relative z-10">
-<h3 class="font-headline text-3xl font-bold mb-4">Fixed Income Optimization</h3>
-<p class="font-body text-sm opacity-90 leading-relaxed">
-                        Maximizing yield through private debt and credit markets that traditional advisors simply cannot access.
-                    </p>
-</div>
-<span class="material-symbols-outlined text-on-primary/10 absolute -bottom-8 -right-8 text-[12rem] group-hover:scale-110 transition-transform duration-700">payments</span>
-</div>
-<div class="md:col-span-4 bg-surface-container-high rounded-xl p-10 flex flex-col justify-between">
-<div>
-<h3 class="font-headline text-2xl font-bold mb-4">Generational Tax Alpha</h3>
-<p class="font-body text-sm text-on-surface-variant">Strategic structuring to ensure liquidity events are optimized for long-term family office preservation.</p>
-</div>
-<span class="material-symbols-outlined text-secondary mt-8">account_balance</span>
-</div>
-<div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-10 border border-outline-variant/10 relative overflow-hidden">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
-<div>
-<h3 class="font-headline text-2xl font-bold mb-4">Alternative Assets</h3>
-<p class="font-body text-sm text-on-surface-variant mb-6">Access to the top 1% of private equity, venture capital, and luxury real estate syndications.</p>
-<button class="text-primary font-label text-xs tracking-widest font-bold flex items-center gap-2 group">
-                            EXPLORE ALLOCATIONS <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
-</button>
-</div>
-<div class="h-48 rounded-lg overflow-hidden">
-<img class="w-full h-full object-cover" data-alt="architectural close-up of a modern glass skyscraper reflecting a dramatic sunset sky" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn2ukyx1elvwl8xcxOvNQme58jAT0MeJGlZQ22txoYsMoyKI8wyaEACxBjuR-uYqsY93wnGVvckpGhACEw_PeVNZB5R_whBmrsPCBwEsy5GHPKYrMlUswox76dfHPAnyt0YrAl2nHvXzt4A3f0hXhe_nnQbIDK8MEXsumUS445xnS7ZGo0VEX8oPSjfn33r0SiW3-KotH_dMLjpObpeR_fcVWfRYMpFcrsaD4sz2-jXdwpRqgKKGKF8fnY_lLBO0X8abR6Qk_LgA4"/>
-</div>
-</div>
-</div>
-</div>
+  <div class="mb-16">
+    <p class="font-label text-xs tracking-widest uppercase text-primary mb-4">THE METHODOLOGY</p>
+    <h2 class="font-headline text-5xl font-bold max-w-2xl">Precision Engineering for Sovereign Portfolios</h2>
+  </div>
+  <div class="grid grid-cols-1 md:grid-cols-12 gap-4">
+    <div class="md:col-span-8 bg-surface-container-low rounded-xl p-10 flex flex-col justify-between min-h-[400px]">
+      <div>
+        <span class="material-symbols-outlined text-primary text-4xl mb-6">analytics</span>
+        <h3 class="font-headline text-3xl font-bold mb-4">Alpha-Neutral Hedging</h3>
+        <p class="font-body text-on-surface-variant max-w-lg leading-relaxed">
+          We utilize sophisticated delta-neutral strategies to ensure your principal is protected during periods of heightened market volatility, while capturing upside via asymmetric derivative positioning.
+        </p>
+      </div>
+      <div class="mt-8 flex items-center gap-4">
+        <span class="font-label text-[10px] text-outline uppercase">CORE TENET 01</span>
+        <div class="h-px flex-grow bg-outline-variant/20"></div>
+      </div>
+    </div>
+    <div class="md:col-span-4 bg-primary text-on-primary rounded-xl p-10 relative overflow-hidden group">
+      <div class="relative z-10">
+        <h3 class="font-headline text-3xl font-bold mb-4">Fixed Income Optimization</h3>
+        <p class="font-body text-sm opacity-90 leading-relaxed">
+          Maximizing yield through private debt and credit markets that traditional advisors simply cannot access.
+        </p>
+      </div>
+      <span class="material-symbols-outlined text-on-primary/10 absolute -bottom-8 -right-8 text-[12rem] group-hover:scale-110 transition-transform duration-700">payments</span>
+    </div>
+    <div class="md:col-span-4 bg-surface-container-high rounded-xl p-10 flex flex-col justify-between">
+      <div>
+        <h3 class="font-headline text-2xl font-bold mb-4">Generational Tax Alpha</h3>
+        <p class="font-body text-sm text-on-surface-variant">Strategic structuring to ensure liquidity events are optimized for long-term family office preservation.</p>
+      </div>
+      <span class="material-symbols-outlined text-secondary mt-8">account_balance</span>
+    </div>
+    <div class="md:col-span-8 bg-surface-container-lowest rounded-xl p-10 border border-outline-variant/10 relative overflow-hidden">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8 items-center">
+        <div>
+          <h3 class="font-headline text-2xl font-bold mb-4">Alternative Assets</h3>
+          <p class="font-body text-sm text-on-surface-variant mb-6">Access to the top 1% of private equity, venture capital, and luxury real estate syndications.</p>
+          <button class="text-primary font-label text-xs tracking-widest font-bold flex items-center gap-2 group" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+            EXPLORE ALLOCATIONS <span class="material-symbols-outlined text-sm group-hover:translate-x-1 transition-transform">arrow_forward</span>
+          </button>
+        </div>
+        <div class="h-48 rounded-lg overflow-hidden">
+          <img class="w-full h-full object-cover" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCn2ukyx1elvwl8xcxOvNQme58jAT0MeJGlZQ22txoYsMoyKI8wyaEACxBjuR-uYqsY93wnGVvckpGhACEw_PeVNZB5R_whBmrsPCBwEsy5GHPKYrMlUswox76dfHPAnyt0YrAl2nHvXzt4A3f0hXhe_nnQbIDK8MEXsumUS445xnS7ZGo0VEX8oPSjfn33r0SiW3-KotH_dMLjpObpeR_fcVWfRYMpFcrsaD4sz2-jXdwpRqgKKGKF8fnY_lLBO0X8abR6Qk_LgA4" alt="Modern glass skyscraper reflecting sunset"/>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- Services Grid -->
 <section class="py-24 px-12 bg-surface-container-low" id="mandates">
-<div class="max-w-7xl mx-auto">
-<div class="text-center mb-16">
-<h2 class="font-headline text-5xl font-bold mb-4">Mandates &amp; Engagement</h2>
-<p class="font-body text-on-surface-variant max-w-xl mx-auto">Selected structures for diverse capital requirements.</p>
-</div>
-<div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-<!-- Service 1 -->
-<div class="bg-surface p-10 rounded-xl flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all">
-<p class="font-label text-[10px] tracking-[0.2em] uppercase text-outline mb-8">ENTRY LEVEL</p>
-<h3 class="font-headline text-2xl font-bold mb-2">Project Advisory</h3>
-<p class="font-headline text-4xl text-on-surface mb-6">$15k <span class="text-lg font-normal text-outline">/ project</span></p>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            Single Portfolio Audit
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            Risk Mitigation Roadmap
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            6-Month Rebalancing Plan
-                        </li>
-</ul>
-<button class="w-full border border-outline-variant/30 py-3 font-label text-xs tracking-widest font-bold uppercase hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                        SELECT MANDATE
-                    </button>
-</div>
-<!-- Service 2 (Featured) -->
-<div class="bg-surface-container-highest p-10 rounded-xl flex flex-col h-full ring-2 ring-primary relative">
-<div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-fixed px-4 py-1 rounded-full font-label text-[10px] font-extrabold tracking-widest uppercase">
-                        MOST COVETED
-                    </div>
-<p class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-8">FULL PARTNERSHIP</p>
-<h3 class="font-headline text-2xl font-bold mb-2">Annual Retainer</h3>
-<p class="font-headline text-4xl text-primary mb-6">$75k <span class="text-lg font-normal text-outline-variant">/ annum</span></p>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-start gap-3 font-body text-sm text-on-surface">
-<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            Direct 24/7 Advisory Access
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface">
-<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            Proprietary Deal Flow Access
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface">
-<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            Multi-Family Office Logic
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface">
-<span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>
-                            Tax &amp; Estate Coordination
-                        </li>
-</ul>
-<button class="w-full bg-primary text-on-primary py-3 font-label text-xs tracking-widest font-bold uppercase hover:opacity-90 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                        ENGAGE PARTNER
-                    </button>
-</div>
-<!-- Service 3 -->
-<div class="bg-surface p-10 rounded-xl flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all">
-<p class="font-label text-[10px] tracking-[0.2em] uppercase text-outline mb-8">INSTITUTIONAL</p>
-<h3 class="font-headline text-2xl font-bold mb-2">Alpha Performance</h3>
-<p class="font-headline text-4xl text-on-surface mb-6">2 / 20 <span class="text-lg font-normal text-outline">Fee Model</span></p>
-<ul class="space-y-4 mb-12 flex-grow">
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            Discretionary Management
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            High Water Mark Protection
-                        </li>
-<li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
-<span class="material-symbols-outlined text-primary text-lg">check</span>
-                            Institutional Reporting
-                        </li>
-</ul>
-<button class="w-full border border-outline-variant/30 py-3 font-label text-xs tracking-widest font-bold uppercase hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior: 'smooth'})">
-                        REQUEST PROSPECTUS
-                    </button>
-</div>
-</div>
-</div>
+  <div class="max-w-7xl mx-auto">
+    <div class="text-center mb-16">
+      <h2 class="font-headline text-5xl font-bold mb-4">Mandates &amp; Engagement</h2>
+      <p class="font-body text-on-surface-variant max-w-xl mx-auto">Selected structures for diverse capital requirements.</p>
+    </div>
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+      <!-- Service 1 -->
+      <div class="bg-surface p-10 rounded-xl flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all">
+        <p class="font-label text-[10px] tracking-[0.2em] uppercase text-outline mb-8">ENTRY LEVEL</p>
+        <h3 class="font-headline text-2xl font-bold mb-2">Project Advisory</h3>
+        <p class="font-headline text-4xl text-on-surface mb-6">$15k <span class="text-lg font-normal text-outline">/ project</span></p>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>Single Portfolio Audit
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>Risk Mitigation Roadmap
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>6-Month Rebalancing Plan
+          </li>
+        </ul>
+        <button class="w-full border border-outline-variant/30 py-3 font-label text-xs tracking-widest font-bold uppercase hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+          SELECT MANDATE
+        </button>
+      </div>
+      <!-- Service 2 (Featured) -->
+      <div class="bg-surface-container-highest p-10 rounded-xl flex flex-col h-full ring-2 ring-primary relative">
+        <div class="absolute -top-4 left-1/2 -translate-x-1/2 bg-primary text-on-primary-fixed px-4 py-1 rounded-full font-label text-[10px] font-extrabold tracking-widest uppercase">
+          MOST COVETED
+        </div>
+        <p class="font-label text-[10px] tracking-[0.2em] uppercase text-primary mb-8">FULL PARTNERSHIP</p>
+        <h3 class="font-headline text-2xl font-bold mb-2">Annual Retainer</h3>
+        <p class="font-headline text-4xl text-primary mb-6">$75k <span class="text-lg font-normal text-outline-variant">/ annum</span></p>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>Direct 24/7 Advisory Access
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>Proprietary Deal Flow Access
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>Multi-Family Office Logic
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface">
+            <span class="material-symbols-outlined text-primary text-lg" style="font-variation-settings: 'FILL' 1;">check_circle</span>Tax &amp; Estate Coordination
+          </li>
+        </ul>
+        <button class="w-full bg-primary text-on-primary py-3 font-label text-xs tracking-widest font-bold uppercase hover:opacity-90 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+          ENGAGE PARTNER
+        </button>
+      </div>
+      <!-- Service 3 -->
+      <div class="bg-surface p-10 rounded-xl flex flex-col h-full border border-transparent hover:border-outline-variant/20 transition-all">
+        <p class="font-label text-[10px] tracking-[0.2em] uppercase text-outline mb-8">INSTITUTIONAL</p>
+        <h3 class="font-headline text-2xl font-bold mb-2">Alpha Performance</h3>
+        <p class="font-headline text-4xl text-on-surface mb-6">2 / 20 <span class="text-lg font-normal text-outline">Fee Model</span></p>
+        <ul class="space-y-4 mb-12 flex-grow">
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>Discretionary Management
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>High Water Mark Protection
+          </li>
+          <li class="flex items-start gap-3 font-body text-sm text-on-surface-variant">
+            <span class="material-symbols-outlined text-primary text-lg">check</span>Institutional Reporting
+          </li>
+        </ul>
+        <button class="w-full border border-outline-variant/30 py-3 font-label text-xs tracking-widest font-bold uppercase hover:bg-white/5 transition-all" onclick="document.getElementById('engage').scrollIntoView({behavior:'smooth'})">
+          REQUEST PROSPECTUS
+        </button>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- Testimonials -->
 <section class="py-24 px-12 max-w-7xl mx-auto overflow-hidden" id="testimonials">
-<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-<div class="relative">
-<img class="w-full h-[500px] object-cover rounded-2xl opacity-40" data-alt="blurred interior of a private jet cabin with soft warm ambient lighting and leather textures" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIjkiAVKIMBm-_0xVLw8l63-Q1xTVv_5iUsSm4X7H9AmK5IpXT80XADX1AwxjyBXYxoUrtWsL4YphYbXXvXXut8mMQ30X0QpOY6la91RCHQeV4PC22KApHDwufgi2KehT8qoM7pzRt3lYIdLl0JENSzNuYsaM40ElYXu1TktZ8K5JfL30_CqU69kat7VieW7LI6k9UaM2yGxWXxa8ICuw4ikfwsCDKiraBjrzeBEcRfv_A9pVssXqwCLJyRdQ5OdHjYzeJcPAO8_g"/>
-<div class="absolute inset-0 flex flex-col justify-center p-12">
-<span class="material-symbols-outlined text-primary text-6xl mb-8">format_quote</span>
-<p class="font-headline text-3xl italic leading-snug mb-8">
-                        "Marcus doesn't sell products; he provides clarity. In a world of noise, his methodology is the quiet room where decisions are actually made."
-                    </p>
-<p class="font-label text-sm tracking-widest font-bold text-on-surface">CEO, GLOBAL LOGISTICS CORP</p>
-</div>
-</div>
-<div>
-<h2 class="font-headline text-5xl font-bold mb-8">Trusted by those who value silence.</h2>
-<div class="space-y-8">
-<div class="p-6 border-l border-primary/40 bg-surface-container-low">
-<p class="font-body text-on-surface-variant mb-4">"The transition to the Annual Retainer model was the single best financial decision our family has made in a decade. We finally have a unified strategy."</p>
-<p class="font-label text-[10px] tracking-widest text-primary uppercase">Managing Director, Venture Fund</p>
-</div>
-<div class="p-6 border-l border-outline-variant/40">
-<p class="font-body text-on-surface-variant mb-4">"Direct access to private debt yields that simply aren't available on retail platforms. The Alpha Performance mandate has exceeded every benchmark."</p>
-<p class="font-label text-[10px] tracking-widest text-outline uppercase">Private Family Office, Zurich</p>
-</div>
-</div>
-</div>
-</div>
+  <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
+    <div class="relative">
+      <img class="w-full h-[500px] object-cover rounded-2xl opacity-40" src="https://lh3.googleusercontent.com/aida-public/AB6AXuCIjkiAVKIMBm-_0xVLw8l63-Q1xTVv_5iUsSm4X7H9AmK5IpXT80XADX1AwxjyBXYxoUrtWsL4YphYbXXvXXut8mMQ30X0QpOY6la91RCHQeV4PC22KApHDwufgi2KehT8qoM7pzRt3lYIdLl0JENSzNuYsaM40ElYXu1TktZ8K5JfL30_CqU69kat7VieW7LI6k9UaM2yGxWXxa8ICuw4ikfwsCDKiraBjrzeBEcRfv_A9pVssXqwCLJyRdQ5OdHjYzeJcPAO8_g" alt="Private jet cabin interior"/>
+      <div class="absolute inset-0 flex flex-col justify-center p-12">
+        <span class="material-symbols-outlined text-primary text-6xl mb-8">format_quote</span>
+        <p class="font-headline text-3xl italic leading-snug mb-8">
+          "Marcus doesn't sell products; he provides clarity. In a world of noise, his methodology is the quiet room where decisions are actually made."
+        </p>
+        <p class="font-label text-sm tracking-widest font-bold text-on-surface">CEO, GLOBAL LOGISTICS CORP</p>
+      </div>
+    </div>
+    <div>
+      <h2 class="font-headline text-5xl font-bold mb-8">Trusted by those who value silence.</h2>
+      <div class="space-y-8">
+        <div class="p-6 border-l border-primary/40 bg-surface-container-low">
+          <p class="font-body text-on-surface-variant mb-4">"The transition to the Annual Retainer model was the single best financial decision our family has made in a decade. We finally have a unified strategy."</p>
+          <p class="font-label text-[10px] tracking-widest text-primary uppercase">Managing Director, Venture Fund</p>
+        </div>
+        <div class="p-6 border-l border-outline-variant/40">
+          <p class="font-body text-on-surface-variant mb-4">"Direct access to private debt yields that simply aren't available on retail platforms. The Alpha Performance mandate has exceeded every benchmark."</p>
+          <p class="font-label text-[10px] tracking-widest text-outline uppercase">Private Family Office, Zurich</p>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
 <!-- Contact Form -->
 <section class="py-24 px-12 bg-surface-container-low border-t border-white/5" id="engage">
-<div class="max-w-3xl mx-auto text-center mb-16">
-<h2 class="font-headline text-5xl font-bold mb-4">Request a Consultation</h2>
-<p class="font-body text-on-surface-variant">Engagement is by inquiry only. All data is handled with absolute confidentiality.</p>
-</div>
-<div class="max-w-2xl mx-auto bg-surface p-12 rounded-xl shadow-2xl relative" id="consultation-form-container">
-<div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-<div class="space-y-2">
-<label class="font-label text-[10px] tracking-widest text-outline uppercase">Full Identity</label>
-<input class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="Johnathan Q. Public" type="text"/>
-</div>
-<div class="space-y-2">
-<label class="font-label text-[10px] tracking-widest text-outline uppercase">Principal Email</label>
-<input class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="principal@domain.com" type="email"/>
-</div>
-</div>
-<div class="space-y-2 mb-8">
-<label class="font-label text-[10px] tracking-widest text-outline uppercase">Mandate of Interest</label>
-<select class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface py-4 px-6 appearance-none">
-<option>Annual Retainer (Recommended)</option>
-<option>Project Advisory</option>
-<option>Alpha Performance Mandate</option>
-</select>
-</div>
-<div class="space-y-2 mb-12">
-<label class="font-label text-[10px] tracking-widest text-outline uppercase">Strategic Brief (Optional)</label>
-<textarea class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="Briefly describe your capital objectives..." rows="4"></textarea>
-</div>
-<button class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed py-5 rounded-lg font-label font-bold tracking-widest uppercase hover:shadow-[0_10px_40px_rgba(233,193,118,0.2)] transition-all" onclick="const container = document.getElementById('consultation-form-container'); container.innerHTML = '&lt;div class=&quot;py-20 flex flex-col items-center text-center animate-in fade-in duration-700&quot;&gt;&lt;div class=&quot;w-20 h-20 rounded-full bg-primary/20 flex items-center justify-center mb-8&quot;&gt;&lt;span class=&quot;material-symbols-outlined text-primary text-5xl&quot;&gt;verified&lt;/span&gt;&lt;/div&gt;&lt;h3 class=&quot;font-headline text-4xl font-bold mb-4&quot;&gt;Submission Completed&lt;/h3&gt;&lt;p class=&quot;font-body text-on-surface-variant max-w-sm mb-8&quot;&gt;Your inquiry has been encrypted and transmitted to our senior partners. A strategic advisor will contact you within 48 business hours.&lt;/p&gt;&lt;div class=&quot;font-label text-[10px] tracking-widest text-primary uppercase&quot;&gt;Reference: SL-2941-X&lt;/div&gt;&lt;/div&gt;';">
-                SUBMIT FOR REVIEW
-            </button>
-<p class="text-center mt-6 font-label text-[9px] text-outline-variant uppercase tracking-[0.2em]">
-                Expect a response within 48 business hours.
-            </p>
-</div>
+  <div class="max-w-3xl mx-auto text-center mb-16">
+    <h2 class="font-headline text-5xl font-bold mb-4">Request a Consultation</h2>
+    <p class="font-body text-on-surface-variant">Engagement is by inquiry only. All data is handled with absolute confidentiality.</p>
+  </div>
+  <div class="max-w-2xl mx-auto bg-surface p-12 rounded-xl shadow-2xl relative" id="consultation-form-container">
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
+      <div class="space-y-2">
+        <label class="font-label text-[10px] tracking-widest text-outline uppercase">Full Identity</label>
+        <input id="field-name" class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="Johnathan Q. Public" type="text"/>
+      </div>
+      <div class="space-y-2">
+        <label class="font-label text-[10px] tracking-widest text-outline uppercase">Principal Email</label>
+        <input id="field-email" class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="principal@domain.com" type="email"/>
+      </div>
+    </div>
+    <div class="space-y-2 mb-8">
+      <label class="font-label text-[10px] tracking-widest text-outline uppercase">Mandate of Interest</label>
+      <select id="field-mandate" class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface py-4 px-6 appearance-none">
+        <option>Annual Retainer (Recommended)</option>
+        <option>Project Advisory</option>
+        <option>Alpha Performance Mandate</option>
+      </select>
+    </div>
+    <div class="space-y-2 mb-12">
+      <label class="font-label text-[10px] tracking-widest text-outline uppercase">Strategic Brief (Optional)</label>
+      <textarea id="field-brief" class="w-full bg-surface-container-highest border-none rounded-lg focus:ring-1 focus:ring-secondary text-on-surface placeholder:text-outline-variant py-4 px-6" placeholder="Briefly describe your capital objectives..." rows="4"></textarea>
+    </div>
+    <button id="submit-btn" class="w-full bg-gradient-to-r from-primary to-primary-container text-on-primary-fixed py-5 rounded-lg font-label font-bold tracking-widest uppercase hover:shadow-[0_10px_40px_rgba(233,193,118,0.2)] transition-all">
+      SUBMIT FOR REVIEW
+    </button>
+    <p class="text-center mt-6 font-label text-[9px] text-outline-variant uppercase tracking-[0.2em]">
+      Expect a response within 48 business hours.
+    </p>
+  </div>
 </section>
+
 <!-- Footer -->
 <footer class="w-full py-12 bg-[#111317] border-t border-white/5">
-<div class="flex flex-col items-center gap-8 w-full px-8">
-<div class="font-headline text-xl text-[#C5A059]">Sovereign Ledger</div>
-<div class="flex gap-8">
-<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity" href="#">Legal</a>
-<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity" href="#">Privacy</a>
-<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity" href="#">Terms</a>
-<a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity" href="#">Compliance</a>
-</div>
-<p class="font-['Inter'] text-xs tracking-widest uppercase text-slate-600">
-                © 2024 Sovereign Ledger Strategic Partners. All rights reserved.
-            </p>
-</div>
+  <div class="flex flex-col items-center gap-8 w-full px-8">
+    <div class="font-headline text-xl text-[#C5A059] cursor-pointer" onclick="window.scrollTo({top:0,behavior:'smooth'})">Sovereign Ledger</div>
+    <div class="flex gap-8">
+      <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity cursor-pointer" href="#">Legal</a>
+      <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity cursor-pointer" href="#">Privacy</a>
+      <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity cursor-pointer" href="#">Terms</a>
+      <a class="font-['Inter'] text-xs tracking-widest uppercase text-slate-500 hover:text-slate-300 hover:opacity-80 transition-opacity cursor-pointer" href="#">Compliance</a>
+    </div>
+    <p class="font-['Inter'] text-xs tracking-widest uppercase text-slate-600">
+      © 2024 Sovereign Ledger Strategic Partners. All rights reserved.
+    </p>
+  </div>
 </footer>
-</body></html>
+
+<script>
+  // Form submission handler
+  document.getElementById('submit-btn').addEventListener('click', function () {
+    const name = document.getElementById('field-name').value.trim();
+    const email = document.getElementById('field-email').value.trim();
+
+    // Basic validation
+    if (!name) {
+      document.getElementById('field-name').focus();
+      document.getElementById('field-name').style.outline = '1px solid #ffb4ab';
+      return;
+    }
+    if (!email || !email.includes('@')) {
+      document.getElementById('field-email').focus();
+      document.getElementById('field-email').style.outline = '1px solid #ffb4ab';
+      return;
+    }
+
+    const container = document.getElementById('consultation-form-container');
+    container.innerHTML = `
+      <div style="padding: 5rem 0; display: flex; flex-direction: column; align-items: center; text-align: center;">
+        <div style="width: 5rem; height: 5rem; border-radius: 9999px; background: rgba(233,193,118,0.15); display: flex; align-items: center; justify-content: center; margin-bottom: 2rem;">
+          <span class="material-symbols-outlined" style="color: #e9c176; font-size: 3rem; font-variation-settings: 'FILL' 1;">verified</span>
+        </div>
+        <h3 class="font-headline" style="font-size: 2.25rem; font-weight: bold; margin-bottom: 1rem;">Submission Completed</h3>
+        <p class="font-body" style="color: #d1c5b4; max-width: 24rem; margin-bottom: 2rem; line-height: 1.6;">
+          Your inquiry has been encrypted and transmitted to our senior partners. A strategic advisor will contact you within 48 business hours.
+        </p>
+        <div class="font-label" style="font-size: 0.625rem; letter-spacing: 0.2em; color: #e9c176; text-transform: uppercase;">Reference: SL-2941-X</div>
+      </div>
+    `;
+  });
+
+  // Active nav highlight on scroll
+  const sections = ['methodology', 'mandates', 'testimonials', 'engage'];
+  const navLinks = document.querySelectorAll('nav a');
+
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    navLinks.forEach(link => {
+      const href = link.getAttribute('onclick') || '';
+      const isActive = href.includes(current) && current !== '';
+      link.style.color = isActive ? '#C5A059' : '';
+      link.style.borderBottom = isActive ? '1px solid #C5A059' : '';
+    });
+  });
+</script>
+
+</body>
+</html>
